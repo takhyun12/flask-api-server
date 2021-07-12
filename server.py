@@ -8,34 +8,15 @@ import json
 app = Flask(__name__)
 api = Api(app)
 
+json_data = open('./data/serial_data.json', encoding='UTF8')
+serial_data: dict = json.load(json_data)
 
-@api.route('/serial')
-class Api_Gateway(Resource):
-    @staticmethod
-    def get():
-        try:
-            with open('./data/serial_data.json', encoding='UTF8') as serial_json:
-                serial_data: json = json.load(serial_json)
-                return serial_data
-        except FileNotFoundError:
-            return None
 
-@api.route('/user/<string:user_id>')
-class User_Information(Resource):
+@api.route('/serial/<string:user_id>')
+class Serial(Resource):
     @staticmethod
     def get(user_id):
-        try:
-            with open('./data/serial_data.json', encoding='UTF8') as serial_json:
-                serial_data: json = json.load(serial_json)
-                user_info: list = serial_data["users"]
-
-                for i in range(len(user_info)):
-                    if user_info[i]["user_id"] == user_id:
-                        return user_info[i]
-                return None
-
-        except FileNotFoundError:
-            return None
+        return [data for data in serial_data['data'] if data['user_id'] == user_id]
 
 
 if __name__ == "__main__":
