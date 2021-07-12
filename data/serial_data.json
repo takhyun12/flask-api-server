@@ -1,0 +1,28 @@
+{
+  "name": "serial_data",
+  "version": "1.0.0",
+  "users": [
+    {
+      "product_id": "F8DO-AF47-6267-ff70-879F-D6EF-4526-21F9",
+      "user_id": "takhyun12@gmail.com",
+      "serial_type": "Pro",
+      "remaining_time": 14400,
+      "refill_date": "30 July 2021 09:00",
+      "refill_time": 14400,
+      "interval": 30,
+      "mac_list": [
+        "3C-7C-3F-D4-51-7D"
+      ]
+    },
+    {
+      "product_id": "F8DO-AF47-6267-ff70-879F-D6EF-4526-21F9",
+      "user_id": "testman@naver.com",
+      "serial_type": "Basic",
+      "remaining_time": 14400,
+      "refill_date": "30 July 2021 09:00",
+      "refill_time": 14400,
+      "interval": 30,
+      "mac_list": ["3C-7C-3F-D4-51-7D"]
+    }
+  ]
+}
