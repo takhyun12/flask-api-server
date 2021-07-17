@@ -19,5 +19,12 @@ class Serial(Resource):
         return [data for data in serial_data['data'] if data['user_id'] == user_id]
 
 
+@api.route('/auth/sign_out/<string:user_id>')
+class Auth(Resource):
+    @staticmethod
+    def post(user_id):
+        return [data for data in serial_data['data'] if data['user_id'] == user_id]
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='127.0.0.1', port=8080)
